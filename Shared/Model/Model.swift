@@ -5,19 +5,26 @@
 //  Created by Holger Mayer on 19.07.20.
 //
 
+import Combine
 import Foundation
 
 
-struct Model {
+class Model : ObservableObject {
     
-    var mainCategory = [Category]()
-    var items = [Item]()
+    @Published var mainCategory = [Category]()
+    @Published var items = [Item]()
+    
+    init() {
+        self.setup()
+    }
+    
+
 }
 
 
 
 extension Model {
-    mutating func setup() -> Model {
+     func setup()  {
         
         let subCategory1 = Category(name: "Category 1.1")
         let subCategory2 = Category(name: "Category 1.2")
@@ -42,8 +49,5 @@ extension Model {
         items.append(Item(name:"Item 6", category : subCategory5))
         items.append(Item(name:"Item 7", category : subCategory6))
         items.append(Item(name:"Item 8", category : subCategory6))
-
-        
-        return self
     }
 }

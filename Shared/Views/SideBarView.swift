@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct SideBarView: View {
+    @EnvironmentObject private var model: Model
+    
     var body: some View {
-        List {
-            Text("Elephant")
-            Text("Mouse")
-            Text("Duck")
-            Text("Deer")
+        List (model.mainCategory, children: \.children) { category in
+            NavigationLink(
+                destination: ItemListView(category: category)){
+                Text(category.name)
+            }
         }
-        
+        .navigationBarTitle("SideBar")
+        .listStyle(SidebarListStyle())
     }
 }
 
 struct SideBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SideBarView()
+        SideBarView().environmentObject(Model())
     }
 }

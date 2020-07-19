@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct ItemDetailView: View {
+    
+    var item  : Item?
+    
     var body: some View {
         ScrollView {
             VStack{
-                Text("Detail View" )
+                if item != nil {
+                    Text("Detail View of \(item!.name)" )
+                } else {
+                    Text("Please select item")
+                }
             }
         }
     }
@@ -19,6 +26,8 @@ struct ItemDetailView: View {
 
 struct ItemDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemDetailView()
+        let model = Model()
+        return ItemDetailView(item: model.items[0])
+            .environmentObject(model)
     }
 }
