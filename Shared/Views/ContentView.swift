@@ -13,9 +13,9 @@ struct ContentView: View {
             
         NavigationView {
 
-            SideBarView().frame(minWidth: 100, maxWidth: .infinity ,minHeight: 300, maxHeight: .infinity)
-            ItemListView().frame(minWidth: 100, maxWidth: .infinity ,minHeight: 300, maxHeight: .infinity)
-            ItemDetailView().frame(minWidth: 300, maxWidth: .infinity ,minHeight: 300, maxHeight: .infinity)
+            SideBarView()
+            ItemListView()
+            ItemDetailView()
         }
  
     }
