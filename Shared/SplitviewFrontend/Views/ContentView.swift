@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @ObservedObject var model: SplitviewModel
+ 
     var splitview: some View {
             
         NavigationView {
 
-            SideBarView()
-            ItemListView()
+            SideBarView(model:model)
+            ItemListView(model:model)
             ItemDetailView()
         }
  
@@ -45,6 +46,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(model:SplitviewModel())
     }
 }

@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct SideBarView: View {
-    @EnvironmentObject private var model: Model
+    @ObservedObject var model: SplitviewModel
     
     var body: some View {
         List (model.mainCategory, children: \.children) { category in
             NavigationLink(
-                destination: ItemListView(category: category)){
-                Text(category.name)
+                destination: ItemListView(model:model,category: category)){
+                Label(category.name, systemImage:category.iconName)
             }
         }
         .navigationBarTitle("SideBar")
@@ -24,6 +24,7 @@ struct SideBarView: View {
 
 struct SideBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SideBarView().environmentObject(Model())
+ 
+        SideBarView(model: SplitviewModel())
     }
 }

@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ItemListView: View {
-    @EnvironmentObject private var model: Model
+    @ObservedObject var model: SplitviewModel
     var category : Category?
     
-    var itemsPerCategory : [Item] {
+    var itemsPerCategory : [CategoryItem] {
         guard let category = category else {
             return model.items
         }
@@ -32,8 +32,8 @@ struct ItemListView: View {
 
 struct ItemListView_Previews: PreviewProvider {
     static var previews: some View {
-        let model = Model()
+        let model = SplitviewModel()
 
-        return ItemListView(category:model.mainCategory[0].children![0] ).environmentObject(model)
+        return ItemListView(model:SplitviewModel(),category:model.mainCategory[0].children![0] )
     }
 }

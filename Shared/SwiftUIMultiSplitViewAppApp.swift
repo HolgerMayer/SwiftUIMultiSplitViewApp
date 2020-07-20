@@ -10,9 +10,12 @@ import SwiftUI
 @main
 struct SwiftUIMultiSplitViewAppApp: App {
     
+    
+    @StateObject private var model = LocationModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(Model())
+            ContentView(model:model)
         }
     }
 }
