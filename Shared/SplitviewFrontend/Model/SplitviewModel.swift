@@ -13,6 +13,7 @@ class SplitviewModel : ObservableObject {
     
     @Published var mainCategory = [Category]()
     @Published var items = [CategoryItem]()
+    @Published var userData = UserData()
     
     init() {
         self.setup()

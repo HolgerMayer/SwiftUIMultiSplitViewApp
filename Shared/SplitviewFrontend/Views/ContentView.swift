@@ -16,7 +16,7 @@ struct ContentView: View {
 
             SideBarView(model:model)
             ItemListView(model:model)
-            ItemDetailView()
+            ItemDetailView(model:model)
         }
  
     }

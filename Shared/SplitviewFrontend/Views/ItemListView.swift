@@ -22,7 +22,7 @@ struct ItemListView: View {
     var body: some View {
         List (itemsPerCategory) { item in
             NavigationLink(
-                destination: ItemDetailView(item: item)){
+                destination: ItemDetailView(model:model,item: item)){
                 Text(item.name)
             }
             

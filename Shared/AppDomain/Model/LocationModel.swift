@@ -9,6 +9,7 @@ import Foundation
 
 class LocationModel : SplitviewModel {
  
+    
     override init() {
         super.init()
     }

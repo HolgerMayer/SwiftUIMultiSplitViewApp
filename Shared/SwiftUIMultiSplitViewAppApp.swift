@@ -13,9 +13,15 @@ struct SwiftUIMultiSplitViewAppApp: App {
     
     @StateObject private var model = LocationModel()
     
-    var body: some Scene {
+    @SceneBuilder var body: some Scene {
         WindowGroup {
             ContentView(model:model)
         }
+        
+        #if os(macOS)
+            Settings {
+                PropertiesView(model:model)
+            }
+        #endif
     }
 }
