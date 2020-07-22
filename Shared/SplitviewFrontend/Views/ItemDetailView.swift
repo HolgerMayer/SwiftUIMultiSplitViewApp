@@ -8,28 +8,45 @@
 import SwiftUI
 
 struct ItemDetailView: View {
+    @State private var isEditing : Bool = false
     @ObservedObject var model: SplitviewModel
     var item  : CategoryItem?
     
- 
-    
     var body: some View {
- 
         #if os(iOS)
-         return DetailedReadOnlyContentView(model:model,item:item)
-         .toolbar {
-            ToolbarItem(placement:.navigationBarTrailing) {
-                Button(action:editAction){
-                    Label("Edit",systemImage:"square.and.pencil")
+        return VStack {
+            if isEditing {
+                 DetailedEditView(model:model, item:item).toolbar {
+                    ToolbarItem(placement:.navigationBarTrailing) {
+                        Button(action:editAction){
+                            Label("Save",systemImage:"message")
+                        }
+                    }
+                }
+            
+            } else {
+                DetailedReadOnlyContentView(model:model,item:item) .toolbar {
+                    ToolbarItem(placement:.navigationBarTrailing) {
+                        Button(action:editAction){
+                            Label("Edit",systemImage:"square.and.pencil")
+                        }
+                    }
                 }
             }
-         }
+        }
         #else
-         return DetailedReadOnlyContentView(model:model,item:item)
+        return VStack {
+            if isEditing {
+                DetailedEditView(model:model,item:item)
+            } else {
+                DetailedReadOnlyContentView(model:model,item:item)
+            }
+        }
         #endif
     }
     
     func editAction() {
+        isEditing = !isEditing
         print("edit action pressed")
     }
 }
@@ -41,3 +58,4 @@ struct ItemDetailView_Previews: PreviewProvider {
             .environmentObject(model)
     }
 }
+
