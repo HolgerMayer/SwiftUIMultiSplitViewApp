@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var model: SplitviewModel
- 
+    #if os(macOS)
+    @State var isEditing : Bool = false
+    #endif
     var splitview: some View {
             
         NavigationView {
@@ -31,8 +33,27 @@ struct ContentView: View {
                             Image(systemName: "sidebar.left")
                         })
                     }
+                    ToolbarItem(placement:.confirmationAction) {
+                        if isEditing {
+                            Button(action: toggleEdit, label: {
+                                Text("Save")
+                            })
+                        }
+                    }
+                    ToolbarItem(placement: .cancellationAction) {
+                        if isEditing {
+                            Button(action: toggleEdit, label: {
+                                Text("Cancel")
+                            })
+                        } else {
+                            Button(action: toggleEdit, label: {
+                                Text("Edit")
+                             })
+
+                        }
+                    }
                 }
-                    .frame(minWidth: 700, maxWidth: .infinity ,minHeight: 300, maxHeight: .infinity)
+                .frame(minWidth: 700, maxWidth: .infinity ,minHeight: 300, maxHeight: .infinity)
             #else
             return splitview
             #endif
@@ -41,7 +62,11 @@ struct ContentView: View {
     func toggleSidebar() {
             NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
     }
-    #endif
+    func toggleEdit() {
+        isEditing = !isEditing
+        print("ToogleEdit")
+    }
+   #endif
 }
 
 struct ContentView_Previews: PreviewProvider {
