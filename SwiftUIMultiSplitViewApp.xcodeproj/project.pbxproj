@@ -35,6 +35,8 @@
 		54C2014824C790DE001C4D52 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C2014624C790DE001C4D52 /* UserData.swift */; };
 		54C2014A24C79106001C4D52 /* PropertiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C2014924C79106001C4D52 /* PropertiesView.swift */; };
 		54C2014B24C79106001C4D52 /* PropertiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C2014924C79106001C4D52 /* PropertiesView.swift */; };
+		54C2015124C8169D001C4D52 /* DetailedReadOnlyContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C2015024C8169D001C4D52 /* DetailedReadOnlyContentView.swift */; };
+		54C2015224C8169D001C4D52 /* DetailedReadOnlyContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C2015024C8169D001C4D52 /* DetailedReadOnlyContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,7 @@
 		548260A224C4E7B5007643C1 /* View+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ext.swift"; sourceTree = "<group>"; };
 		54C2014624C790DE001C4D52 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		54C2014924C79106001C4D52 /* PropertiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesView.swift; sourceTree = "<group>"; };
+		54C2015024C8169D001C4D52 /* DetailedReadOnlyContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedReadOnlyContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,7 @@
 				5482609724C4CD7B007643C1 /* ItemListView.swift */,
 				5482609924C4CD91007643C1 /* ItemDetailView.swift */,
 				54C2014924C79106001C4D52 /* PropertiesView.swift */,
+				54C2015024C8169D001C4D52 /* DetailedReadOnlyContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -287,6 +291,7 @@
 				5482609A24C4CD91007643C1 /* ItemDetailView.swift in Sources */,
 				54C2014724C790DE001C4D52 /* UserData.swift in Sources */,
 				5482607D24C4CA17007643C1 /* SwiftUIMultiSplitViewAppApp.swift in Sources */,
+				54C2015124C8169D001C4D52 /* DetailedReadOnlyContentView.swift in Sources */,
 				54C2014A24C79106001C4D52 /* PropertiesView.swift in Sources */,
 				5482608F24C4CA5A007643C1 /* Category.swift in Sources */,
 				541A75A724C61C37006BBBE3 /* PointOfInterest.swift in Sources */,
@@ -307,6 +312,7 @@
 				548260A024C4CE82007643C1 /* CategoryItem.swift in Sources */,
 				54C2014824C790DE001C4D52 /* UserData.swift in Sources */,
 				5482607E24C4CA17007643C1 /* SwiftUIMultiSplitViewAppApp.swift in Sources */,
+				54C2015224C8169D001C4D52 /* DetailedReadOnlyContentView.swift in Sources */,
 				54C2014B24C79106001C4D52 /* PropertiesView.swift in Sources */,
 				5482609C24C4CE77007643C1 /* ItemListView.swift in Sources */,
 				541A75A824C61C37006BBBE3 /* PointOfInterest.swift in Sources */,
