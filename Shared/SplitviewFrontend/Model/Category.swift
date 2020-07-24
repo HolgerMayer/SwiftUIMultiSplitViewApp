@@ -8,11 +8,11 @@
 import Foundation
 
 
-class Category : Identifiable {
+class Category : Identifiable, ObservableObject {
     var id = UUID()
-    var name : String
-    var iconName : String = "circle.fill"
-    var children : [Category]?
+    @Published var name : String
+    @Published var iconName : String = "circle.fill"
+    @Published var children : [Category]?
     
     
     init(name: String, iconName : String,  children : [Category]?) {

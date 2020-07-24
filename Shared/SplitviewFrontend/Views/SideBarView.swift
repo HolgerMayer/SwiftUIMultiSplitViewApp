@@ -14,7 +14,7 @@ struct SideBarView: View {
         List (model.mainCategory, children: \.children) { category in
             NavigationLink(
                 destination: ItemListView(model:model,category: category)){
-                Label(category.name, systemImage:category.iconName)
+                SidebarItemRow(category:category)
             }
         }
         .navigationBarTitle("SideBar")
